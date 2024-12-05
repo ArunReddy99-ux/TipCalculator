@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# TipCalculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple React-based Tip Calculator application that allows users to calculate the total amount they need to pay, including a tip based on service satisfaction. Both the user and their friend can input their service satisfaction levels to compute an average tip.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Features
+Bill Input: Enter the total bill amount.
+Tip Selection: Choose the tip percentage based on service satisfaction from both the user and their friend.
+Total Calculation: Automatically calculates the total amount including the tip.
+Reset Functionality: Clears all inputs and resets the application state.
+# Components
+1. App
+The root component that renders the TipCalculator component.
+2. TipCalculator
+Manages the state for the bill amount, tip percentages, and reset functionality.
+Renders the Bill, Selectpercent, Ttl, and Reset components.
+3. Bill
+Accepts user input for the bill amount.
+Props:
+amount: Current bill amount.
+setamount: Function to update the bill amount.
+setOpen: Function to open the tip calculation display.
+4. Selectpercent
+Dropdown component to select the tip percentage based on service satisfaction.
+Props:
+amt: Selected tip percentage.
+onSelect: Function to update the selected tip percentage.
+children: Label text for the dropdown.
+5. Ttl
+Displays the total amount to be paid, including the calculated tip.
+Props:
+at: The entered bill amount.
+fa: Friend's selected tip percentage.
+mat: User's selected tip percentage.
+onOpen: Boolean to toggle display visibility.
+6. Reset
+Button to reset the application state.
+Props:
+onClick: Function to reset the state.
+onOpen: Boolean to toggle button visibility.
+# State Management
+amount (bill amount): Tracks the bill value entered by the user.
+amt (user's tip percentage): Tracks the tip percentage selected by the user.
+frndamt (friend's tip percentage): Tracks the tip percentage selected by the friend.
+isOpen (visibility toggle): Controls the visibility of the calculated total and reset button.
+# Technologies Used
+React: For building the user interface.
+useState Hook: For managing component state.
+CSS: For styling the application.
